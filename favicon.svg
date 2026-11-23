@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="226 254 1480 1480" role="img" aria-label="Elsa Pombo">
+  <g fill="none" stroke-width="124" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M325 827 L966 384 L1607 827" stroke="#BA5803"/>
+    <g stroke="#989200">
+      <path d="M671 837 H1131 A252 256 0 0 1 1383 1093 A252 255 0 0 1 1131 1348 H671"/>
+      <path d="M671 1093 H1131"/>
+      <path d="M671 1604 H1131"/>
+    </g>
+  </g>
+</svg>
