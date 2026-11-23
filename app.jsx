@@ -502,7 +502,7 @@ function Footer({ scriptFont }) {
           <div className="footer__col">
             <h5>Contacto</h5>
             <ul>
-              <li><a href="mailto:hola@elsapombo.com">hola@elsapombo.com</a></li>
+              <li><a href="mailto:elsapombosaiz@gmail.com">elsapombosaiz@gmail.com</a></li>
               <li><a href="#" aria-label="Instagram">Instagram</a></li>
               <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
             </ul>
