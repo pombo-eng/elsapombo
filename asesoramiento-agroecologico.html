@@ -13,29 +13,12 @@
 <link rel="stylesheet" href="styles.css" />
 
 <style>
-  .page-head { padding: 170px 0 90px; background: var(--cream); }
-  .page-head__grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 72px;
-    align-items: center;
-  }
-  .page-head__media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 14px; }
-  .page-head__media img { width: 100%; height: 100%; object-fit: cover; }
-  .page-head__caption { margin-top: 14px; font-size: 12px; letter-spacing: 0.5px; color: var(--earth); font-style: italic; }
-  h1.section-title {
-    font-family: var(--font-display);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.5px;
-    margin: 0 0 28px;
-    color: var(--ink);
-    text-wrap: balance;
-  }
-  h1.section-title em { font-style: italic; color: var(--moss-deep); }
-  .page-head h1.section-title { font-size: clamp(40px, 6vw, 76px); max-width: 16ch; }
-  .page-head .lede { max-width: 56ch; }
-
+  .intro { padding: 110px 0 100px; background: var(--cream); }
+  .intro h2.section-title { max-width: 20ch; }
+  .hero { min-height: 640px; height: 92vh; }
+  .hero__inner { max-width: 1000px; }
+  .hero__media::after { background: linear-gradient(180deg, rgba(20,24,14,0.5) 0%, rgba(20,24,14,0.32) 40%, rgba(20,24,14,0.62) 100%); }
+  .hero__sub { text-shadow: 0 1px 14px rgba(0,0,0,0.35); opacity: 1; }
   .block { padding: 110px 0; background: var(--cream); }
   .block--alt { background: var(--cream-2); }
   .block__grid {
@@ -64,9 +47,7 @@
     .block { padding: 80px 0; }
     .block__grid { grid-template-columns: 1fr; gap: 40px; }
     .block--flip .block__media { order: 0; }
-    .page-head { padding: 120px 0 60px; }
-    .page-head__grid { grid-template-columns: 1fr; gap: 40px; }
-    .page-head__media { aspect-ratio: 4 / 3; }
+    .intro { padding: 80px 0 70px; }
     .block__grid > [style*="order"] { order: 0 !important; }
   }
 
@@ -93,7 +74,7 @@
 </head>
 <body>
 
-<nav class="nav scrolled">
+<nav class="nav" id="nav">
   <a href="index.html" class="nav__brand">Elsa Pombo</a>
   <ul class="nav__links">
     <li><a href="index.html">Inicio</a></li>
@@ -105,31 +86,38 @@
 
 <main>
 
-<section class="page-head">
-  <div class="container">
-    <div class="page-head__grid">
-      <div>
-    <p class="eyebrow reveal">Asesoramiento agroecológico</p>
-    <h1 class="section-title reveal">Antes de plantar, conviene <em>entender la tierra.</em></h1>
-    <p class="lede reveal" style="--reveal-delay: 80ms">
+<header class="hero" id="top">
+  <div class="hero__media">
+    <img src="assets/agro-hero-ancho.jpg" alt="Casa de piedra rodeada de bosque de alimentos y huerto acolchado al amanecer, con bruma en el valle" fetchpriority="high" />
+  </div>
+
+  <div class="hero__inner">
+    <p class="hero__tag">asesoramiento agroecológico</p>
+    <h1 class="hero__headline">Antes de plantar, conviene <em>entender la tierra.</em></h1>
+    <p class="hero__sub">
       Acompañamos a quien ha comprado una finca, o está a punto de hacerlo, y quiere que produzca alimento sin agotar el suelo, el agua ni a las personas que la trabajan.
     </p>
-    <p class="body reveal" style="--reveal-delay: 140ms">
-      La agroecología parte de algo sencillo: cada terreno tiene su suelo, su agua, su clima y su historia, y el diseño sale de ahí. Un huerto en Asturias no se parece a uno en Cáceres. Copiar el de un vídeo suele acabar en bancales secos y un cobertizo lleno de herramientas sin usar.
+    <a href="#contacto" class="hero__cta">Cuéntanos tu finca <span class="arr" aria-hidden="true">→</span></a>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Desliza</span>
+    <span class="hero__scroll-line"></span>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="container">
+    <p class="eyebrow reveal">Por dónde empezar</p>
+    <h2 class="section-title reveal">La agroecología parte de algo <em>sencillo.</em></h2>
+    <p class="body reveal" style="--reveal-delay: 80ms">
+      Cada terreno tiene su suelo, su agua, su clima y su historia, y el diseño sale de ahí. Un huerto en Asturias no se parece a uno en Cáceres. Copiar el de un vídeo suele acabar en bancales secos y un cobertizo lleno de herramientas sin usar.
     </p>
-    <ul class="when reveal" style="--reveal-delay: 200ms">
+    <ul class="when reveal" style="--reveal-delay: 140ms">
       <li>Estás mirando un terreno y quieres saber qué se puede hacer en él antes de firmar.</li>
       <li>Ya tienes la finca y no sabes por dónde empezar.</li>
       <li>Plantaste y algo no va: el suelo se encharca, los frutales no arrancan o el huerto da más trabajo del que esperabas.</li>
     </ul>
-        </div>
-      <div class="reveal" style="--reveal-delay: 120ms">
-        <div class="page-head__media">
-          <img src="assets/agro-hero.jpg" alt="Casa de piedra rodeada de bosque de alimentos y huerto acolchado, con bruma en el valle al amanecer" fetchpriority="high" />
-        </div>
-        <p class="page-head__caption">Imagen ilustrativa generada con IA.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -429,6 +417,14 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var nav = document.getElementById("nav");
+    function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 60); }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
 <script>
   (function () {
     var els = document.querySelectorAll(".reveal");
