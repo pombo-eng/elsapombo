@@ -393,8 +393,12 @@ function ContactForm() {
         body: JSON.stringify(data)
       });
       const out = await res.json();
-      if (res.ok && String(out.success) === "true") setSent(true);else setError(true);
+      if (res.ok && String(out.success) === "true") setSent(true);else {
+        console.warn("FormSubmit:", res.status, out);
+        setError(true);
+      }
     } catch (err) {
+      console.warn("FormSubmit:", err);
       setError(true);
     }
     setSending(false);

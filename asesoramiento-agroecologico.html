@@ -13,7 +13,16 @@
 <link rel="stylesheet" href="styles.css" />
 
 <style>
-  .page-head { padding: 190px 0 90px; background: var(--cream); }
+  .page-head { padding: 170px 0 90px; background: var(--cream); }
+  .page-head__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 72px;
+    align-items: center;
+  }
+  .page-head__media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 14px; }
+  .page-head__media img { width: 100%; height: 100%; object-fit: cover; }
+  .page-head__caption { margin-top: 14px; font-size: 12px; letter-spacing: 0.5px; color: var(--earth); font-style: italic; }
   h1.section-title {
     font-family: var(--font-display);
     font-weight: 300;
@@ -55,7 +64,9 @@
     .block { padding: 80px 0; }
     .block__grid { grid-template-columns: 1fr; gap: 40px; }
     .block--flip .block__media { order: 0; }
-    .page-head { padding: 140px 0 60px; }
+    .page-head { padding: 120px 0 60px; }
+    .page-head__grid { grid-template-columns: 1fr; gap: 40px; }
+    .page-head__media { aspect-ratio: 4 / 3; }
     .block__grid > [style*="order"] { order: 0 !important; }
   }
 
@@ -96,6 +107,8 @@
 
 <section class="page-head">
   <div class="container">
+    <div class="page-head__grid">
+      <div>
     <p class="eyebrow reveal">Asesoramiento agroecológico</p>
     <h1 class="section-title reveal">Antes de plantar, conviene <em>entender la tierra.</em></h1>
     <p class="lede reveal" style="--reveal-delay: 80ms">
@@ -109,6 +122,14 @@
       <li>Ya tienes la finca y no sabes por dónde empezar.</li>
       <li>Plantaste y algo no va: el suelo se encharca, los frutales no arrancan o el huerto da más trabajo del que esperabas.</li>
     </ul>
+        </div>
+      <div class="reveal" style="--reveal-delay: 120ms">
+        <div class="page-head__media">
+          <img src="assets/agro-hero.jpg" alt="Casa de piedra rodeada de bosque de alimentos y huerto acolchado, con bruma en el valle al amanecer" fetchpriority="high" />
+        </div>
+        <p class="page-head__caption">Imagen ilustrativa generada con IA.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -447,8 +468,12 @@
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(data)
       })
-        .then(function (r) { return r.json().then(function (o) { return r.ok && String(o.success) === "true"; }); })
-        .catch(function () { return false; })
+        .then(function (r) { return r.json().then(function (o) {
+          var good = r.ok && String(o.success) === "true";
+          if (!good) console.warn("FormSubmit:", r.status, o);
+          return good;
+        }); })
+        .catch(function (e) { console.warn("FormSubmit:", e); return false; })
         .then(function (done) {
           if (done) {
             form.hidden = true;
