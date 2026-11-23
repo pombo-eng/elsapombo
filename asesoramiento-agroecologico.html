@@ -69,27 +69,15 @@
 
   .services { background: var(--cream-2); }
 
-  .cta { padding: 120px 0; background: var(--moss-deep); color: var(--cream); }
-  .cta .eyebrow { color: #d8e0bd; }
-  .cta .eyebrow::before { background: #d8e0bd; }
-  .cta h2.section-title { color: var(--cream); max-width: 20ch; }
-  .cta h2.section-title em { color: #d8e0bd; }
-  .cta .lede { color: rgba(247, 243, 234, 0.85); }
-  .cta__btn {
-    display: inline-flex; align-items: center; gap: 12px;
-    margin-top: 28px;
-    padding: 16px 30px;
-    background: var(--cream);
-    color: var(--ink);
-    font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500;
-    text-decoration: none;
-    border-radius: 2px;
-    transition: background 0.25s ease;
-  }
-  .cta__btn:hover { background: #fff; }
-  .cta__btn .arr { transition: transform 0.3s ease; }
-  .cta__btn:hover .arr { transform: translateX(4px); }
-  .cta__btn:focus-visible { outline: 2px solid #d8e0bd; outline-offset: 3px; }
+  .contact::before { background-image: url("assets/agro-huerto.jpg"); opacity: 0.08; }
+  .field { min-width: 0; }
+  .field input, .field select, .field textarea { width: 100%; min-width: 0; }
+  [hidden] { display: none !important; }
+  .form__error { margin: 0; font-size: 14px; color: #f1d9c9; }
+  .form__error a { color: inherit; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .submit:disabled { opacity: 0.6; cursor: default; transform: none; }
+  .submit:focus-visible { outline: 2px solid #d8e0bd; outline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -100,7 +88,7 @@
     <li><a href="index.html">Inicio</a></li>
     <li><a href="index.html#services">Servicios</a></li>
     <li><a href="asesoramiento-agroecologico.html" aria-current="page">Agroecología</a></li>
-    <li><a href="index.html#contact">Contacto</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
 
@@ -295,14 +283,97 @@
   </div>
 </section>
 
-<section class="cta" id="contacto">
+<section class="contact" id="contacto">
   <div class="container">
     <p class="eyebrow reveal">Empezamos por aquí</p>
     <h2 class="section-title reveal">¿Tienes una finca, o estás <em>mirando una?</em></h2>
-    <p class="lede reveal" style="--reveal-delay: 80ms">
-      Cuéntanos dónde está y qué te gustaría hacer. Te decimos con claridad qué es posible y cuánto trabajo lleva.
-    </p>
-    <a class="cta__btn reveal" style="--reveal-delay: 140ms" href="index.html#contact">Escríbenos <span class="arr" aria-hidden="true">→</span></a>
+    <div class="contact__grid">
+      <div class="contact__copy reveal" style="--reveal-delay: 80ms">
+        <p class="lede" style="margin-bottom: 18px">
+          Cuéntanos dónde está y qué te gustaría hacer.
+        </p>
+        <p>
+          La primera conversación es gratuita y sin compromiso. Te decimos con claridad qué es posible en tu terreno y cuánto trabajo lleva, antes de que gastes un euro en plantas.
+        </p>
+      </div>
+
+      <div class="reveal" style="--reveal-delay: 120ms">
+        <div class="form__success" id="agro-ok" role="status" hidden>
+          Gracias. Te escribimos en menos de 48 horas para fijar una primera conversación.
+        </div>
+
+        <form class="form" id="agro-form" novalidate>
+          <div class="form__row">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="phone">Teléfono</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="location">Dónde está la finca</label>
+              <input id="location" name="location" type="text" placeholder="Municipio y provincia" />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="situation">Tu situación</label>
+              <select id="situation" name="situation" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option>Estoy mirando un terreno</option>
+                <option>Ya tengo la finca y quiero empezar</option>
+                <option>Ya planté y algo no va bien</option>
+                <option>Otra</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="size">Superficie aproximada</label>
+              <input id="size" name="size" type="text" placeholder="Por ejemplo, 5.000 m²" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="interest">Qué te interesa</label>
+            <select id="interest" name="interest">
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option>Huerto agroecológico</option>
+              <option>Bosque de alimentos</option>
+              <option>Suelo y agua</option>
+              <option>Plan completo de la finca</option>
+              <option>Aún no lo sé</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="msg">Cuéntanos brevemente qué imaginas</label>
+            <textarea id="msg" name="msg" rows="4"></textarea>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="website">No rellenar</label>
+            <input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <p class="form__error" id="agro-error" role="alert" hidden>
+            No se pudo enviar. Escríbenos a <a href="mailto:elsapombosaiz@gmail.com">elsapombosaiz@gmail.com</a>.
+          </p>
+
+          <button type="submit" class="submit" id="agro-submit">
+            <span id="agro-submit-label">Enviar mensaje</span> <span class="arr" aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -321,7 +392,7 @@
           <li><a href="index.html">Inicio</a></li>
           <li><a href="index.html#services">Servicios</a></li>
           <li><a href="asesoramiento-agroecologico.html">Agroecología</a></li>
-          <li><a href="index.html#contact">Contacto</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -350,6 +421,45 @@
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
     els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+<script>
+  (function () {
+    var form = document.getElementById("agro-form");
+    var ok = document.getElementById("agro-ok");
+    var err = document.getElementById("agro-error");
+    var btn = document.getElementById("agro-submit");
+    var label = document.getElementById("agro-submit-label");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      btn.disabled = true;
+      label.textContent = "Enviando…";
+      err.hidden = true;
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      data._subject = "Consulta de asesoramiento agroecológico desde elsapombo.com";
+      data._template = "table";
+      data._captcha = "false";
+      fetch("https://formsubmit.co/ajax/elsapombosaiz@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(function (r) { return r.json().then(function (o) { return r.ok && String(o.success) === "true"; }); })
+        .catch(function () { return false; })
+        .then(function (done) {
+          if (done) {
+            form.hidden = true;
+            ok.hidden = false;
+          } else {
+            err.hidden = false;
+            btn.disabled = false;
+            label.textContent = "Enviar mensaje";
+          }
+        });
+    });
   })();
 </script>
 </body>
