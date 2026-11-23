@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Asesoramiento agroecológico y bosques de alimentos — Elsa Pombo</title>
+<meta name="description" content="Asesoramiento agroecológico para fincas y casas de campo: lectura del terreno, suelo vivo, gestión del agua, huerto y bosque de alimentos diseñados para tu clima y tu tiempo." />
+<link rel="canonical" href="https://elsapombo.com/asesoramiento-agroecologico.html" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@200;300;400&family=Noto+Sans:wght@100;200;300&family=Marcellus&family=Tenor+Sans&family=Italiana&family=Cormorant:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+  .page-head { padding: 190px 0 90px; background: var(--cream); }
+  h1.section-title {
+    font-family: var(--font-display);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    margin: 0 0 28px;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  h1.section-title em { font-style: italic; color: var(--moss-deep); }
+  .page-head h1.section-title { font-size: clamp(40px, 6vw, 76px); max-width: 16ch; }
+  .page-head .lede { max-width: 56ch; }
+
+  .block { padding: 110px 0; background: var(--cream); }
+  .block--alt { background: var(--cream-2); }
+  .block__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .block--flip .block__media { order: 2; }
+  .block__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 14px;
+  }
+  .block__media img { width: 100%; height: 100%; object-fit: cover; }
+  .block__caption {
+    margin-top: 14px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: var(--earth);
+    font-style: italic;
+  }
+  .block h2.section-title { font-size: clamp(30px, 3.8vw, 46px); }
+  @media (max-width: 860px) {
+    .block { padding: 80px 0; }
+    .block__grid { grid-template-columns: 1fr; gap: 40px; }
+    .block--flip .block__media { order: 0; }
+    .page-head { padding: 140px 0 60px; }
+    .block__grid > [style*="order"] { order: 0 !important; }
+  }
+
+  .when { margin: 34px 0 0; padding: 0; list-style: none; display: grid; gap: 0; max-width: 62ch; }
+  .when li {
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    font-size: 16px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .when li:last-child { border-bottom: 1px solid var(--line); }
+
+  .services { background: var(--cream-2); }
+
+  .cta { padding: 120px 0; background: var(--moss-deep); color: var(--cream); }
+  .cta .eyebrow { color: #d8e0bd; }
+  .cta .eyebrow::before { background: #d8e0bd; }
+  .cta h2.section-title { color: var(--cream); max-width: 20ch; }
+  .cta h2.section-title em { color: #d8e0bd; }
+  .cta .lede { color: rgba(247, 243, 234, 0.85); }
+  .cta__btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-top: 28px;
+    padding: 16px 30px;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.25s ease;
+  }
+  .cta__btn:hover { background: #fff; }
+  .cta__btn .arr { transition: transform 0.3s ease; }
+  .cta__btn:hover .arr { transform: translateX(4px); }
+  .cta__btn:focus-visible { outline: 2px solid #d8e0bd; outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<nav class="nav scrolled">
+  <a href="index.html" class="nav__brand">Elsa Pombo</a>
+  <ul class="nav__links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#services">Servicios</a></li>
+    <li><a href="asesoramiento-agroecologico.html" aria-current="page">Agroecología</a></li>
+    <li><a href="index.html#contact">Contacto</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow reveal">Asesoramiento agroecológico</p>
+    <h1 class="section-title reveal">Antes de plantar, conviene <em>entender la tierra.</em></h1>
+    <p class="lede reveal" style="--reveal-delay: 80ms">
+      Acompañamos a quien ha comprado una finca, o está a punto de hacerlo, y quiere que produzca alimento sin agotar el suelo, el agua ni a las personas que la trabajan.
+    </p>
+    <p class="body reveal" style="--reveal-delay: 140ms">
+      La agroecología parte de algo sencillo: cada terreno tiene su suelo, su agua, su clima y su historia, y el diseño sale de ahí. Un huerto en Asturias no se parece a uno en Cáceres. Copiar el de un vídeo suele acabar en bancales secos y un cobertizo lleno de herramientas sin usar.
+    </p>
+    <ul class="when reveal" style="--reveal-delay: 200ms">
+      <li>Estás mirando un terreno y quieres saber qué se puede hacer en él antes de firmar.</li>
+      <li>Ya tienes la finca y no sabes por dónde empezar.</li>
+      <li>Plantaste y algo no va: el suelo se encharca, los frutales no arrancan o el huerto da más trabajo del que esperabas.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block block--alt" id="suelo">
+  <div class="container">
+    <div class="block__grid">
+      <div class="reveal">
+        <div class="block__media">
+          <img src="assets/agro-suelo-vivo.jpg" alt="Suelo oscuro con mantillo, hilos de micelio, una lombriz y brotes de trébol" loading="lazy" />
+        </div>
+        <p class="block__caption">Imagen ilustrativa generada con IA.</p>
+      </div>
+      <div>
+        <p class="eyebrow reveal">El suelo</p>
+        <h2 class="section-title reveal">Lo primero que se mira, y lo último que <em>se suele cuidar.</em></h2>
+        <p class="body reveal" style="--reveal-delay: 80ms">
+          Un suelo vivo retiene agua, alimenta las raíces y aguanta mejor el calor y las lluvias fuertes. Se construye con cobertura permanente, aporte de materia orgánica y el menor laboreo posible.
+        </p>
+        <p class="body reveal" style="--reveal-delay: 140ms">
+          Antes de proponer nada tomamos muestras, abrimos una calicata para ver la estructura y miramos qué crece solo. Las plantas espontáneas cuentan mucho de cómo está la tierra.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block block--flip" id="agua">
+  <div class="container">
+    <div class="block__grid">
+      <div class="block__media-wrap reveal" style="order: 2">
+        <div class="block__media">
+          <img src="assets/agro-agua.jpg" alt="Zanja en curva de nivel con agua remansada en una ladera verde con frutales jóvenes" loading="lazy" />
+        </div>
+        <p class="block__caption">Imagen ilustrativa generada con IA.</p>
+      </div>
+      <div>
+        <p class="eyebrow reveal">El agua</p>
+        <h2 class="section-title reveal">Cada litro que se queda en la finca es uno que <em>no hay que bombear.</em></h2>
+        <p class="body reveal" style="--reveal-delay: 80ms">
+          En muchas fincas el agua llega de golpe y se va rápido. Con zanjas en curva de nivel, balsas pequeñas, acolchados y vegetación bien colocada se frena, se infiltra y se guarda en el propio suelo.
+        </p>
+        <p class="body reveal" style="--reveal-delay: 140ms">
+          Ajustamos la solución a la pendiente y a la lluvia de la zona. También te decimos qué permisos de aguas hacen falta en tu comunidad, porque una balsa sin licencia puede salir cara.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block block--alt" id="huerto">
+  <div class="container">
+    <div class="block__grid">
+      <div class="reveal">
+        <div class="block__media">
+          <img src="assets/agro-huerto.jpg" alt="Huerto agroecológico con bancales acolchados, calabacines, lechugas, caléndulas y borraja" loading="lazy" />
+        </div>
+        <p class="block__caption">Imagen ilustrativa generada con IA.</p>
+      </div>
+      <div>
+        <p class="eyebrow reveal">El huerto</p>
+        <h2 class="section-title reveal">Un huerto del tamaño <em>de tu tiempo.</em></h2>
+        <p class="body reveal" style="--reveal-delay: 80ms">
+          El error más común es hacerlo demasiado grande. Empezamos por las horas a la semana que de verdad puedes dedicarle y diseñamos desde ahí.
+        </p>
+        <p class="body reveal" style="--reveal-delay: 140ms">
+          Bancales acolchados, flores entre las hortalizas para atraer polinizadores y fauna útil, rotaciones simples y un calendario que no te haga abandonar en agosto.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="bosque-de-alimentos">
+  <div class="container">
+    <div class="block__grid">
+      <div class="reveal" style="order: 2">
+        <div class="block__media">
+          <img src="assets/agro-bosque-alimentos.jpg" alt="Bosque de alimentos joven con frutales, arbustos y aromáticas junto a una casa de piedra en Galicia" loading="lazy" />
+        </div>
+        <p class="block__caption">Imagen ilustrativa generada con IA.</p>
+      </div>
+      <div>
+        <p class="eyebrow reveal">Bosques de alimentos</p>
+        <h2 class="section-title reveal">Tarda en dar, y luego da <em>con poco trabajo.</em></h2>
+        <p class="body reveal" style="--reveal-delay: 80ms">
+          Se plantan a la vez árboles frutales, arbustos de fruto, hierbas, cubresuelos y trepadoras, de modo que cada capa aproveche lo que deja la anterior. Elegimos las especies para tu clima y tu suelo, no para un catálogo.
+        </p>
+        <p class="body reveal" style="--reveal-delay: 140ms">
+          Los primeros años piden riego, acolchado y paciencia. Hay cosechas rápidas, como aromáticas y frutos pequeños, que sostienen el ánimo mientras crecen los árboles, y cosechas de fondo que llegan pasados unos años.
+        </p>
+        <p class="body reveal" style="--reveal-delay: 200ms; color: var(--ink); font-weight: 500">
+          No lo vendemos como un huerto que se cuida solo. Al principio da trabajo, y bastante.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="areas">
+  <div class="container">
+    <p class="eyebrow reveal">Qué incluye</p>
+    <h2 class="section-title reveal" style="max-width: 20ch">Seis áreas de trabajo, <em>un solo plan.</em></h2>
+    <p class="lede reveal" style="--reveal-delay: 80ms">
+      Se pueden contratar juntas o por separado, según en qué punto esté tu finca.
+    </p>
+
+    <div class="services__grid">
+      <div class="service reveal">
+        <div class="service__roman">I.</div>
+        <h3 class="service__title">Lectura del terreno</h3>
+        <p class="service__body">Pendiente, orientación, suelo, vegetación espontánea, agua disponible y vientos. Con eso se decide qué va dónde.</p>
+      </div>
+      <div class="service reveal" style="--reveal-delay: 80ms">
+        <div class="service__roman">II.</div>
+        <h3 class="service__title">Suelo vivo</h3>
+        <p class="service__body">Observación en campo, abonos verdes, acolchados y compost. Menos laboreo y más materia orgánica.</p>
+      </div>
+      <div class="service reveal" style="--reveal-delay: 160ms">
+        <div class="service__roman">III.</div>
+        <h3 class="service__title">Gestión del agua</h3>
+        <p class="service__body">Captación de lluvia, zanjas de infiltración, balsas y riego eficiente, con el trámite que corresponda.</p>
+      </div>
+      <div class="service reveal">
+        <div class="service__roman">IV.</div>
+        <h3 class="service__title">Huerto agroecológico</h3>
+        <p class="service__body">Bancales, rotaciones, asociaciones y setos de flor, dimensionados a las horas que puedes dedicarle.</p>
+      </div>
+      <div class="service reveal" style="--reveal-delay: 80ms">
+        <div class="service__roman">V.</div>
+        <h3 class="service__title">Bosque de alimentos</h3>
+        <p class="service__body">Frutales, arbustos, hierbas y cubresuelos en capas. Se diseña pensando en el año diez, no en el primero.</p>
+      </div>
+      <div class="service reveal" style="--reveal-delay: 160ms">
+        <div class="service__roman">VI.</div>
+        <h3 class="service__title">Biodiversidad y manejo</h3>
+        <p class="service__body">Setos, charcas, refugios para fauna útil y un calendario de tareas realista para cada estación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="como-es">
+  <div class="container">
+    <p class="eyebrow reveal">Cómo es una asesoría</p>
+    <h2 class="section-title reveal">Primero miramos, <em>después proponemos.</em></h2>
+    <p class="lede reveal" style="--reveal-delay: 80ms">
+      El alcance y la duración dependen de la finca y de lo que quieras hacer en ella. Lo acordamos por escrito antes de empezar.
+    </p>
+
+    <div class="process__steps">
+      <div class="step reveal">
+        <div class="step__num">01</div>
+        <h3 class="step__title">Una primera conversación</h3>
+        <p class="step__body">Nos cuentas qué finca tienes o cuál estás mirando, qué quieres sacar de ella y cuánto tiempo puedes dedicarle. Es gratuita y sin compromiso.</p>
+      </div>
+      <div class="step reveal" style="--reveal-delay: 90ms">
+        <div class="step__num">02</div>
+        <h3 class="step__title">Visita al terreno</h3>
+        <p class="step__body">Recorremos la finca contigo. Miramos suelo, agua, pendiente, vegetación y accesos, y tomamos las muestras necesarias.</p>
+      </div>
+      <div class="step reveal" style="--reveal-delay: 180ms">
+        <div class="step__num">03</div>
+        <h3 class="step__title">Diagnóstico y plan por fases</h3>
+        <p class="step__body">Recibes un documento claro con lo que hay, lo que conviene hacer primero y lo que puede esperar, ordenado según tu presupuesto.</p>
+      </div>
+      <div class="step reveal" style="--reveal-delay: 270ms">
+        <div class="step__num">04</div>
+        <h3 class="step__title">Acompañamiento</h3>
+        <p class="step__body">Resolvemos dudas durante la puesta en marcha y volvemos en las épocas clave para ajustar lo que haga falta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <div class="container">
+    <p class="eyebrow reveal">Empezamos por aquí</p>
+    <h2 class="section-title reveal">¿Tienes una finca, o estás <em>mirando una?</em></h2>
+    <p class="lede reveal" style="--reveal-delay: 80ms">
+      Cuéntanos dónde está y qué te gustaría hacer. Te decimos con claridad qué es posible y cuánto trabajo lleva.
+    </p>
+    <a class="cta__btn reveal" style="--reveal-delay: 140ms" href="index.html#contact">Escríbenos <span class="arr" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <h3 class="footer__brand" style="font-family: var(--font-script); font-weight: 200">Elsa Pombo</h3>
+        <p class="footer__tag">Diseñamos vidas, no solo casas.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Navegación</h5>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#services">Servicios</a></li>
+          <li><a href="asesoramiento-agroecologico.html">Agroecología</a></li>
+          <li><a href="index.html#contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="mailto:hola@elsapombo.com">hola@elsapombo.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Elsa Pombo. Todos los derechos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>

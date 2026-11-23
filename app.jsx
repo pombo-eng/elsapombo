@@ -14,6 +14,7 @@ const NAV_LINKS = [
 { href: "#about", label: "Quién soy" },
 { href: "#process", label: "Cómo trabajo" },
 { href: "#services", label: "Servicios" },
+{ href: "asesoramiento-agroecologico.html", label: "Agroecología" },
 { href: "#contact", label: "Contacto" }];
 
 
