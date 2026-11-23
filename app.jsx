@@ -375,9 +375,28 @@ function Projects() {
 
 function ContactForm() {
   const [sent, setSent] = useState(false);
-  const submit = (e) => {
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
+  const submit = async (e) => {
     e.preventDefault();
-    setSent(true);
+    setSending(true);
+    setError(false);
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    data._subject = "Nuevo mensaje desde elsapombo.com";
+    data._template = "table";
+    data._captcha = "false";
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/elsapombosaiz@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data)
+      });
+      const out = await res.json();
+      if (res.ok && String(out.success) === "true") setSent(true);else setError(true);
+    } catch (err) {
+      setError(true);
+    }
+    setSending(false);
   };
   return (
     <section className="contact" id="contact">
@@ -445,8 +464,14 @@ function ContactForm() {
                 <textarea id="msg" name="msg" rows="4" />
               </div>
 
-              <button type="submit" className="submit">
-                Enviar mensaje <span className="arr">→</span>
+              {error &&
+              <p role="alert" style={{ marginBottom: 12 }}>
+                  No se pudo enviar. Escríbenos a{" "}
+                  <a href="mailto:elsapombosaiz@gmail.com">elsapombosaiz@gmail.com</a>.
+                </p>
+              }
+              <button type="submit" className="submit" disabled={sending}>
+                {sending ? "Enviando…" : "Enviar mensaje"} <span className="arr">→</span>
               </button>
             </form>
           }
